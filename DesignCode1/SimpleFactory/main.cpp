@@ -1,8 +1,9 @@
 #include <iostream>
 #include <RenderFactory.h>
-
+#include "OpenGLRenderer.h"
 int main()
 {
+
     // create the factory object
     RenderFactory *f = new RenderFactory;
 
@@ -25,5 +26,6 @@ int main()
     }
 
     return EXIT_SUCCESS;
+
 }
 
