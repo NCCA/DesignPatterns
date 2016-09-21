@@ -5,9 +5,9 @@
 #ifndef AUTOTIMER_H
 #define AUTOTIMER_H
 
-#include <boost/scoped_ptr.hpp>
+//#include <boost/scoped_ptr.hpp>
 #include <string>
-
+#include <memory>
 /// An object that reports how long it was alive for when it
 /// is destroyed.
 ///
@@ -21,7 +21,7 @@ public:
 
 private:
 	class Impl;
-  boost::scoped_ptr<Impl> m_impl;
+	std::unique_ptr<Impl> m_impl;
 };
 
 

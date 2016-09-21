@@ -6,7 +6,7 @@ class Observer;
 class Subject
 {
   private :
-    std::vector < class Observer * > m_views;
+    std::vector <  Observer * > m_views;
     int m_value;
   public:
     void attach(Observer *_obs)

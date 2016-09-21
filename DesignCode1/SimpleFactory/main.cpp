@@ -3,7 +3,6 @@
 #include "OpenGLRenderer.h"
 int main()
 {
-
     // create the factory object
     RenderFactory *f = new RenderFactory;
 

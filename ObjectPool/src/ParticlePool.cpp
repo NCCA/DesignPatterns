@@ -1,5 +1,5 @@
 #include "ParticlePool.h"
-
+#include <iostream>
 void ParticlePool::animate()
 {
   for (int i = 0; i < POOL_SIZE; i++)
@@ -15,6 +15,7 @@ void ParticlePool::create(double _x, double _y,double _xVel, double _yVel, int _
   {
     if (!m_particles[i].inUse())
     {
+      std::cout<<"Pool "<<i<<"\n";
       m_particles[i].init(_x, _y, _xVel, _yVel, _lifetime);
       return;
     }

@@ -28,10 +28,12 @@ void Texture::printCurrentTexture()
   if (!m_textures.empty())
   {
     std::cout << "Number of instances made = " << m_textures.size() << std::endl;
-    for (std::map<std::string,Texture*>::iterator iter = m_textures.begin(); iter != m_textures.end(); ++iter)
-    {
-        std::cout << (*iter).first << std::endl;
-    }
+//    for (std::map<std::string,Texture*>::iterator iter = m_textures.begin(); iter != m_textures.end(); ++iter)
+//    {
+//        std::cout << (*iter).first << std::endl;
+//    }
+    for (auto t : m_textures )
+      std::cout << t.first << std::endl;
     std::cout << std::endl;
   }
 }

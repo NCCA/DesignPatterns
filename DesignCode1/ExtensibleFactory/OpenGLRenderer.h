@@ -8,10 +8,10 @@ class OpenGLRenderer : public Renderer
 {
 public:
 
-  bool loadScene(const std::string &_filename) {return true;}
-  void setViewportSize(int _w, int _h) {;}
-  void setCameraPos(double _x, double _y, double _z) {;}
-  void setLookAt(double _x, double _y, double _z) {;}
+  bool loadScene(const std::string &) {return true;}
+  void setViewportSize(int , int ) {;}
+  void setCameraPos(double , double , double ) {;}
+  void setLookAt(double , double , double ) {;}
   void render() {std::cout<<"OpenGL Render\n";}
   ~OpenGLRenderer(){std::cout<<"OpenGL dtor called\n";}
   static Renderer *create() { return new OpenGLRenderer; }

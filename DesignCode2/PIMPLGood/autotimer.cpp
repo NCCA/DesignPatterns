@@ -61,7 +61,6 @@ AutoTimer::~AutoTimer()
   std::cout << m_impl->mName << ": took " << m_impl->GetElapsed()
 			  << " secs" << std::endl;
   delete m_impl;
-  m_impl = NULL;
 }
 
 

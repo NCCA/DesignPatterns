@@ -6,11 +6,11 @@
 class DirectXRenderer : public Renderer
 {
 public:
-
-  bool loadScene(const std::string &_filename) {return true;}
-  void setViewportSize(int _w, int _h) {;}
-  void setCameraPos(double _x, double _y, double _z) {;}
-  void setLookAt(double _x, double _y, double _z) {;}
+  DirectXRenderer()=default;
+  bool loadScene(const std::string &) {return true;}
+  void setViewportSize(int , int ) {;}
+  void setCameraPos(double , double , double ) {;}
+  void setLookAt(double , double , double ) {;}
   void render() {std::cout<<"DirectX Render\n";}
   ~DirectXRenderer(){std::cout<<"Direct X dtor called\n";}
   static Renderer *create() { return new DirectXRenderer; }
