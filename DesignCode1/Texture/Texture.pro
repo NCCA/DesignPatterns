@@ -5,3 +5,4 @@ SOURCES=main.cpp \
 HEADERS=Texture.h
 CONFIG+=c++11
 CONFIG-=app_bundle
+macx:QMAKE_MAC_SDK = macosx10.12

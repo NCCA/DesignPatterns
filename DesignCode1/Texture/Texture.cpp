@@ -2,14 +2,14 @@
 #include <iostream>
 
 //now we can use the static member variable
-std::map<std::string,Texture*> Texture::m_textures;
+std::unordered_map<std::string,Texture*> Texture::m_textures;
 
 
 Texture* Texture::getTexture(const std::string& _type)
 {
   // try to find an existing instance; if not found std::map will return types.end()
 
-  std::map<std::string,Texture*>::iterator it = m_textures.find(_type);
+  auto it = m_textures.find(_type);
   Texture *t;
   if (it == m_textures.end())
   { // if no instance with the proper type was found, make one

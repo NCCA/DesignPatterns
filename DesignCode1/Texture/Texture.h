@@ -1,7 +1,7 @@
 #ifndef TEXTURE_H__
 #define TEXTURE_H__
 #include <string>
-#include <map>
+#include <unordered_map>
 
 class Texture
 {
@@ -10,7 +10,7 @@ public :
   // just to demo the process
   static void printCurrentTexture();
 private :
-    static std::map<std::string,Texture*> m_textures;
+    static std::unordered_map<std::string,Texture*> m_textures;
     // the type of this texture (i.e. the name)
     std::string m_name;
 
