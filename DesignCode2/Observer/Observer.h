@@ -1,23 +1,25 @@
-#ifndef OBSERVER_H__
-#define OBSERVER_H__
+#ifndef OBSERVER_H_
+#define OBSERVER_H_
 
 #include "Subject.h"
+#include <memory>
 
 class Observer
 {
   private :
-    Subject *m_subject;
+    std::shared_ptr<Subject> m_subject;
     int m_denom;
   public:
-    Observer(Subject *_mod, int _div)
+    Observer(std::shared_ptr<Subject> _mod, int _div)
     {
         m_subject = _mod;
         m_denom = _div;
         m_subject->attach(this);
     }
     virtual void update() = 0;
+    virtual ~Observer() {}
   protected:
-    Subject *getSubject() { return m_subject;}
+    std::shared_ptr<Subject> getSubject() { return m_subject;}
     int getDivisor() const { return m_denom; }
 };
 

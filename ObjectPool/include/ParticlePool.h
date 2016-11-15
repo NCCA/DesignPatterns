@@ -1,6 +1,8 @@
 // based on http://gameprogrammingpatterns.com/object-pool.html
-#ifndef PARTICLEPOOL_H__
-#define PARTICLEPOOL_H__
+#ifndef PARTICLEPOOL_H_
+#define PARTICLEPOOL_H_
+
+#include <array>
 #include "Particle.h"
 class ParticlePool
 {
@@ -11,8 +13,8 @@ public:
 
 
 private:
-  static const int POOL_SIZE = 100;
-  Particle m_particles[POOL_SIZE];
+  static constexpr int PoolSize = 100;
+  std::array<Particle,PoolSize> m_particles;
 };
 
 

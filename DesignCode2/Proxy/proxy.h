@@ -6,9 +6,7 @@
 
 class Original;
 
-///
-/// A Proxy class that wraps access to an Original class.
-///
+
 class Proxy
 {
 public:

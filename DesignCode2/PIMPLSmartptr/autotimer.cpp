@@ -51,6 +51,6 @@ AutoTimer::AutoTimer(const std::string &name) :
 AutoTimer::~AutoTimer()
 {
   std::cout << m_impl->m_name << ": took " << m_impl->GetElapsed()
-			  << " secs" << std::endl;
+        << " secs\n";
 }
 

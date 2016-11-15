@@ -2,21 +2,21 @@
 #include <iostream>
 void ParticlePool::animate()
 {
-  for (int i = 0; i < POOL_SIZE; i++)
+  for (auto &p : m_particles)
   {
-    m_particles[i].animate();
+    p.animate();
   }
 }
 
 void ParticlePool::create(double _x, double _y,double _xVel, double _yVel, int _lifetime)
 {
   // Find an available particle.
-  for (int i = 0; i < POOL_SIZE; i++)
+  for (auto &p : m_particles)
   {
-    if (!m_particles[i].inUse())
+    if (!p.inUse())
     {
-      std::cout<<"Pool "<<i<<"\n";
-      m_particles[i].init(_x, _y, _xVel, _yVel, _lifetime);
+      std::cout<<p.id()<<'\n';
+      p.init(_x, _y, _xVel, _yVel, _lifetime);
       return;
     }
   }

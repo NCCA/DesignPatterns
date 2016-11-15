@@ -9,10 +9,10 @@ public:
 
   bool loadScene(const std::string &_filename) {return true;}
   void setViewportSize(int _w, int _h) {;}
-  void setCameraPos(double _x, double _y, double _z) {;}
-  void setLookAt(double _x, double _y, double _z) {;}
+  void setCameraPos(float _x, float _y, float _z) {;}
+  void setLookAt(float _x, float _y, float _z) {;}
   void render() {std::cout<<"DirectX Render\n";}
-  ~DirectXRenderer(){std::cout<<"Direct X dtor called\n";}
+  ~DirectXRenderer(){std::cout<<"DirectX dtor called\n";}
 };
 
 #endif

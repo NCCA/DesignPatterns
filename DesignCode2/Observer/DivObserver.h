@@ -1,5 +1,5 @@
-#ifndef DIVOBSERVER_H__
-#define DIVOBSERVER_H__
+#ifndef DIVOBSERVER_H_
+#define DIVOBSERVER_H_
 
 #include "Subject.h"
 #include "Observer.h"
@@ -8,7 +8,8 @@
 class DivObserver: public Observer
 {
   public:
-    DivObserver(Subject *_mod, int _div): Observer(_mod, _div){}
+    DivObserver(std::shared_ptr<Subject> _mod, int _div): Observer(_mod, _div){}
+    virtual ~DivObserver() {}
     void update()
     {
         int v = getSubject()->getVal(), d = getDivisor();

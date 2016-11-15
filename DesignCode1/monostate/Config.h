@@ -1,5 +1,5 @@
-#ifndef CONFIG_H__
-#define CONFIG_H__
+#ifndef CONFIG_H_
+#define CONFIG_H_
 #include <string>
 
 class Config

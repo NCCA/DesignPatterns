@@ -1,17 +1,18 @@
-#ifndef SUBJECT_H__
-#define SUBJECT_H__
+#ifndef SUBJECT_H_
+#define SUBJECT_H_
 #include <vector>
-
+#include <memory>
 class Observer;
 class Subject
 {
   private :
-    std::vector <  Observer * > m_views;
+    std::vector <  std::unique_ptr<Observer>> m_views;
     int m_value;
   public:
     void attach(Observer *_obs)
     {
-        m_views.push_back(_obs);
+      // note as using smart pointer we emplace
+       m_views.emplace_back(_obs);
     }
     void setVal(int _val)
     {

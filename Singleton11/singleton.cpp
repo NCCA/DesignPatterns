@@ -26,7 +26,7 @@ void print()
 
 int main()
 {
-
+  Singleton s=Singleton::instance();
 	auto t1 = std::async(print);
 	auto t2 = std::async(print);
 	auto t3 = std::async(print);
@@ -34,6 +34,7 @@ int main()
 	t1.get();
 	t2.get();
 	t3.get();
+  std::cout<<s.getCount();
 		
 	return EXIT_SUCCESS;
 }

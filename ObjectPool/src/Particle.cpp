@@ -1,5 +1,7 @@
 #include "Particle.h"
 #include <iostream>
+int Particle::m_id=0;
+
 void Particle::init(double _x, double _y,double _xVel, double _yVel, int _lifetime)
 {
   m_x = _x;
@@ -7,6 +9,7 @@ void Particle::init(double _x, double _y,double _xVel, double _yVel, int _lifeti
   m_xVel = _xVel;
   m_yVel = _yVel;
   m_framesLeft = _lifetime;
+  m_id++;
 }
 
 

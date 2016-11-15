@@ -12,9 +12,9 @@ int main(int, char **)
 
   for (int i = 0; i < 1000; ++i)
   {
-    std::cout << ".";
+    std::cout << '.';
   }
-  std::cout << std::endl;
+  std::cout <<'\n';
 
   return EXIT_SUCCESS;
 }
