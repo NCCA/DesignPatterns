@@ -1,24 +1,22 @@
 #include <iostream>
 #include <RenderFactory.h>
 #include "OpenGLRenderer.h"
+#include <memory>
 int main()
 {
     // create the factory object
-    RenderFactory *f = new RenderFactory;
+  std::unique_ptr<RenderFactory>f(new RenderFactory);
 
-    // create an OpenGL renderer
-    Renderer *renderType = f->createRenderer("OpenGL");
-    renderType->render();
-    delete renderType;
+  // create an OpenGL renderer
+  std::unique_ptr<Renderer> renderType( f->createRenderer("OpenGL"));
+  renderType->render();
 
     //Renderer *directX =
-    renderType=f->createRenderer("DirectX");
+    renderType.reset(f->createRenderer("DirectX"));
     renderType->render();
-    delete renderType;
 
-    delete f;
 
-    Renderer *unknown= f->createRenderer("raytracer");
+    std::unique_ptr<Renderer> unknown(f->createRenderer("raytracer"));
     if(unknown == 0)
     {
       std::cout<<"don't know how to create a raytracer\n";
