@@ -14,5 +14,5 @@ Renderer *RenderFactory::createRenderer(const std::string &_type)
   {
     return new DirectXRenderer();
   }
-  else return 0;
+  else return nullptr;
 }
