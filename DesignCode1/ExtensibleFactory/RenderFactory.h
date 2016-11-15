@@ -18,3 +18,14 @@ private :
     static std::unordered_map<std::string, std::function<Renderer *()>> m_renderers;
 
 };
+
+
+
+
+
+
+
+
+
+
+

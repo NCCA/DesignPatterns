@@ -12,7 +12,9 @@ Texture* Texture::getTexture(const std::string& _type)
   if (it == m_textures.end())
   { // if no instance with the proper type was found, make one
     // lazy initialization part
-    m_textures[_type].reset(new Texture(_type));
+    t=new Texture(_type);
+    m_textures[_type].reset(t);
+
   }
   else
   { //if already had an instance

@@ -17,7 +17,7 @@ int main()
 
 
     std::unique_ptr<Renderer> unknown(f->createRenderer("raytracer"));
-    if(unknown == 0)
+    if(unknown == nullptr)
     {
       std::cout<<"don't know how to create a raytracer\n";
     }
