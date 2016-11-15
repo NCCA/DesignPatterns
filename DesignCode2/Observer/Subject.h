@@ -28,9 +28,8 @@ class Subject
 
 void Subject::notify()
 {
-  int size=m_views.size();
-  for (int i = 0; i < size; ++i)
-      m_views[i]->update();
+  for(auto &n : m_views )
+    n->update();
 }
 
 #endif
