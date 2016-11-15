@@ -1,5 +1,5 @@
-#ifndef PIZZA_H__
-#define PIZZA_H__
+#ifndef PIZZA_H_
+#define PIZZA_H_
 #include <string>
 #include <iostream>
 // in terms of the pattern this is the "product"

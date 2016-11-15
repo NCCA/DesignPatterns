@@ -1,5 +1,7 @@
-#ifndef HAWAIIAN_H__
-#define HAWAIIAN_H__
+#ifndef HAWAIIAN_H_
+#define HAWAIIAN_H_
+
+#include "PizzaBuilder.h"
 
 class HawaiianPizzaBuilder : public PizzaBuilder
 {

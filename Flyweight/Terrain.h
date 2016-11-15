@@ -1,5 +1,5 @@
-#ifndef TERRAIN_H__
-#define TERRAIN_H__
+#ifndef TERRAIN_H_
+#define TERRAIN_H_
 // based on discussion here
 // http://gameprogrammingpatterns.com/flyweight.html
 

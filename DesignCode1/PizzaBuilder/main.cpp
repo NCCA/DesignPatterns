@@ -2,26 +2,24 @@
 #include "Cook.h"
 #include "HawaiianPizzaBuilder.h"
 #include "SpicyPizzaBuilder.h"
+#include <memory>
+
 int main()
 {
   Cook cook;
-  PizzaBuilder* hawaiianPizzaBuilder = new HawaiianPizzaBuilder;
-  PizzaBuilder* spicyPizzaBuilder   = new SpicyPizzaBuilder;
+  std::unique_ptr<PizzaBuilder> hawaiianPizzaBuilder(new HawaiianPizzaBuilder);
+  std::unique_ptr<PizzaBuilder> spicyPizzaBuilder( new SpicyPizzaBuilder);
 
-  cook.setPizzaBuilder(hawaiianPizzaBuilder);
+  cook.setPizzaBuilder(std::move(hawaiianPizzaBuilder));
   cook.constructPizza();
 
-  Pizza* hawaiian = cook.getPizza();
+  std::unique_ptr<Pizza> hawaiian(cook.getPizza());
   hawaiian->open();
 
-  cook.setPizzaBuilder(spicyPizzaBuilder);
+  cook.setPizzaBuilder(std::move(spicyPizzaBuilder));
   cook.constructPizza();
 
-  Pizza* spicy = cook.getPizza();
+  std::unique_ptr<Pizza> spicy(cook.getPizza());
   spicy->open();
 
-  delete hawaiianPizzaBuilder;
-  delete spicyPizzaBuilder;
-  delete hawaiian;
-  delete spicy;
 }

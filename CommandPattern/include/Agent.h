@@ -1,7 +1,7 @@
 // based on discussions here
 // http://gameprogrammingpatterns.com/command.html
-#ifndef AGENT_H__
-#define AGENT_H__
+#ifndef AGENT_H_
+#define AGENT_H_
 #include <string>
 typedef struct
 {

@@ -1,17 +1,24 @@
 #include "Visitors.h"
-
+#include <memory>
+#include <array>
 int main()
 {
-  Element *list[] =
+
+  std::array<std::unique_ptr<Element>,3>list =
   {
-    new A(), new B(), new C()
+    {
+    std::unique_ptr<Element>(new A),
+    std::unique_ptr<Element>(new B),
+    std::unique_ptr<Element>(new C)
+    }
   };
+
   SomeOperation op;
   SomeOtherOp other;
 
-  for (int i = 0; i < 3; i++)
-    list[i]->accept(op);
-  for (int i = 0; i < 3; i++)
-    list[i]->accept(other);
+  for (auto &l  : list)
+    l->accept(op);
+  for (auto &l : list)
+    l->accept(other);
 
 }

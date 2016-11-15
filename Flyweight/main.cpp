@@ -12,7 +12,7 @@ for(int y=0; y<HEIGHT; ++y)
   {
     std::cout<<world.getTile(x,y).getMoveCost();
   }
-  std::cout<<"\n";
+  std::cout<<'\n';
 }
 
 

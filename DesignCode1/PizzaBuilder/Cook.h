@@ -1,13 +1,15 @@
-#ifndef COOK_H__
-#define COOK_H__
+#ifndef COOK_H_
+#define COOK_H_
+#include "PizzaBuilder.h"
+#include <memory>
 class Cook
 {
   public:
-    void setPizzaBuilder(PizzaBuilder* pb)
+    void setPizzaBuilder(std::unique_ptr<PizzaBuilder> pb)
     {
-      m_pizzaBuilder = pb;
+      m_pizzaBuilder= std::move(pb);
     }
-    Pizza* getPizza()
+    std::unique_ptr<Pizza> getPizza()
     {
       return m_pizzaBuilder->getPizza();
     }
@@ -19,7 +21,7 @@ class Cook
       m_pizzaBuilder->buildTopping();
     }
   private:
-    PizzaBuilder* m_pizzaBuilder;
+    std::unique_ptr<PizzaBuilder> m_pizzaBuilder;
 };
 
 #endif

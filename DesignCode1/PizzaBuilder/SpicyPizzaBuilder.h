@@ -1,5 +1,6 @@
-#ifndef SPICY_H__
-#define SPICY_H__
+#ifndef SPICY_H_
+#define SPICY_H_
+#include "PizzaBuilder.h"
 
 class SpicyPizzaBuilder : public PizzaBuilder
 {

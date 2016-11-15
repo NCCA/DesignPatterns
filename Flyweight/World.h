@@ -1,5 +1,5 @@
-#ifndef WORLD_H__
-#define WORLD_H__
+#ifndef WORLD_H_
+#define WORLD_H_
 // based on discussion here
 // http://gameprogrammingpatterns.com/flyweight.html
 #include <cassert>

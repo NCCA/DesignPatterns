@@ -1,7 +1,7 @@
 // based on discussions here
 // http://gameprogrammingpatterns.com/command.html
-#ifndef COMMAND_H__
-#define COMMAND_H__
+#ifndef COMMAND_H_
+#define COMMAND_H_
 class Agent;
 
 class Command

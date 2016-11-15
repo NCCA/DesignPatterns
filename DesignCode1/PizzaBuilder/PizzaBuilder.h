@@ -1,24 +1,27 @@
-#ifndef PIZZABUILDER_H__
-#define PIZZABUILDER_H__
+#ifndef PIZZABUILDER_H_
+#define PIZZABUILDER_H_
 
 #include "Pizza.h"
+#include "PizzaBuilder.h"
+#include <memory>
 // "Abstract Builder"
 class PizzaBuilder
 {
 public:
-  Pizza* getPizza()
+  std::unique_ptr<Pizza> getPizza()
   {
-    return m_pizza;
+    return std::move(m_pizza);
   }
   void createNewPizzaProduct()
   {
-    m_pizza = new Pizza;
+    m_pizza.reset(  new Pizza);
   }
   virtual void buildDough() = 0;
   virtual void buildSauce() = 0;
   virtual void buildTopping() = 0;
+  virtual ~PizzaBuilder(){}
 protected:
-  Pizza* m_pizza;
+  std::unique_ptr<Pizza> m_pizza;
 };
 
 #endif

@@ -29,7 +29,7 @@ int main()
   DirectX = RendererFactory::createRenderer("DirectX");
   if (!DirectX)
   {
-    std::cout << "DirectX renderer unregistered" << std::endl;
+    std::cout << "DirectX renderer unregistered\n";
   }
   return EXIT_SUCCESS;
 }
