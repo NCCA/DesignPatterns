@@ -1,5 +1,5 @@
-#ifndef PROTOTYPE_H__
-#define PROTOTYPE_H__
+#ifndef PROTOTYPE_H_
+#define PROTOTYPE_H_
 // based on example http://en.wikipedia.org/wiki/Prototype_pattern
 #include <iostream>
 

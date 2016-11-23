@@ -20,8 +20,8 @@ public:
 
 private:
   // Make this object be noncopyable because it holds a pointer
-  AutoTimer(const AutoTimer &);
-  const AutoTimer &operator =(const AutoTimer &);
+  AutoTimer(const AutoTimer &)=delete;
+  const AutoTimer &operator =(const AutoTimer &)=delete;
 
   class Impl;
   Impl *m_impl;

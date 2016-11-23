@@ -1,7 +1,7 @@
 // based on discussions here
 // http://gameprogrammingpatterns.com/command.html
-#ifndef INPUTPROCESSOR_H__
-#define INPUTPROCESSOR_H__
+#ifndef INPUTPROCESSOR_H_
+#define INPUTPROCESSOR_H_
 #include "Command.h"
 #include <memory>
 // a simple enum for our agent modes
