@@ -3,7 +3,7 @@
 
 #include "Subject.h"
 #include <memory>
-
+#include <iostream>
 class Observer
 {
   private :
@@ -15,6 +15,7 @@ class Observer
         m_subject = _mod;
         m_denom = _div;
         m_subject->attach(this);
+        std::cout<<"Observer use count "<<m_subject.use_count()<<'\n';
     }
     virtual void update() = 0;
     ~Observer() {}

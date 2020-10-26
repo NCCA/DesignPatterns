@@ -3,7 +3,7 @@
 #include <memory>
 int main()
 {
-  std::shared_ptr<Subject>subj(new Subject);
+  std::shared_ptr<Subject>subj=std::make_shared<Subject>();
   DivObserver divObs1(subj, 4);
   DivObserver divObs2(subj, 3);
   ModObserver modObs3(subj, 3);
@@ -14,7 +14,7 @@ int main()
   ModObserver modObs8(subj, 43);
   subj->setVal(14);
   std::cout<<"now set the value again\n";
-  for(int i=1; i<200; ++i)
+  for(int i=1; i<2; ++i)
   {
       std::cout<<"Notify\n";
       subj->setVal(i);

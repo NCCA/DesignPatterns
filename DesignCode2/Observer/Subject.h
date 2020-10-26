@@ -2,13 +2,15 @@
 #define SUBJECT_H_
 #include <vector>
 #include <memory>
+#include <iostream>
 class Observer;
 class Subject
 {
   private :
-    std::vector <  std::unique_ptr<Observer>> m_views;
+    std::vector <  Observer *> m_views;
     int m_value;
   public:
+    ~Subject(){std::cout<<"Subject dtor\n";}
     void attach(Observer *_obs)
     {
       // note as using smart pointer we emplace
